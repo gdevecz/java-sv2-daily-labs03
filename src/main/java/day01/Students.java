@@ -17,7 +17,7 @@ public class Students {
 
     public boolean isHeightsIncreasing() {
         int i = 1;
-        while (i < heights.size() && (heights.get(i-1) <= heights.get(i))) {
+        while (i < heights.size() && (heights.get(i - 1) <= heights.get(i))) {
             i++;
         }
         return i < heights.size() ? false : true;
