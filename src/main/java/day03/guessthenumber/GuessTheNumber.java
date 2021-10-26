@@ -58,7 +58,7 @@ public class GuessTheNumber {
         Scanner sc = new Scanner(System.in);
         String guess;
         while (!isTheGuessValid(guess = sc.nextLine())) {
-            System.out.println("Hibás adat! Ez vagy kívül esik a megadott tartományom, vagy nem is szám!");
+            System.out.println("Hibás adat! Ez vagy kívül esik a megadott tartományon, vagy nem is szám!");
             System.out.print("Kérem a " + (6 - possibleTries + 1) + ". tippet: ");
         }
         return Integer.parseInt(guess.strip());
