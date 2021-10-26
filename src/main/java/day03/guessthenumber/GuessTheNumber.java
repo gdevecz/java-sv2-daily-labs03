@@ -12,16 +12,14 @@ public class GuessTheNumber {
 
 
     public GuessTheNumber(int lowerBound, int upperBound){
-        Random rnd = new Random();
         this.lowerBound = lowerBound;
         this.upperBound = upperBound;
-        number = rnd.nextInt(upperBound-lowerBound) + lowerBound;
-        possibleTries = 6;
 //        Az istennek sem találtam működő cls-t.
 //        System.out.println("\f");
     }
 
     public void theGame() {
+        initializingTheHuessTheNumber();
         boolean result = false;
         int guess;
         while ((possibleTries > 0) && !result) {
@@ -34,6 +32,12 @@ public class GuessTheNumber {
         } else {
             System.out.println("Sajnos nem sikerült kitalálni, hogy a szám a mire gondoltam: " + number);
         }
+    }
+
+    private void initializingTheHuessTheNumber() {
+        Random rnd = new Random();
+        number = rnd.nextInt(upperBound-lowerBound) + lowerBound;
+        possibleTries = 6;
     }
 
     private boolean compareGuessToNumber(int guess) {
@@ -75,9 +79,5 @@ public class GuessTheNumber {
             return false;
         }
         return true;
-    }
-
-    public int getNumber() {
-        return number;
     }
 }
