@@ -5,15 +5,16 @@ import java.util.Scanner;
 
 public class GuessTheNumber {
 
+    public final static int LOWERBOUND = 1;
+
+    public final static int UPPERBOUND = 100;
+
     private int number;
-    private int lowerBound;
-    private int upperBound;
+
     private int possibleTries;
 
 
-    public GuessTheNumber(int lowerBound, int upperBound){
-        this.lowerBound = lowerBound;
-        this.upperBound = upperBound;
+    public GuessTheNumber(){
 //        Az istennek sem találtam működő cls-t.
 //        System.out.println("\f");
     }
@@ -36,7 +37,7 @@ public class GuessTheNumber {
 
     private void initializingTheHuessTheNumber() {
         Random rnd = new Random();
-        number = rnd.nextInt(upperBound-lowerBound) + lowerBound;
+        number = rnd.nextInt(UPPERBOUND-LOWERBOUND-1) + LOWERBOUND + 1;
         possibleTries = 6;
     }
 
@@ -75,7 +76,7 @@ public class GuessTheNumber {
             }
         }
         int number;
-        if ((number = Integer.parseInt(guess.strip())) <= lowerBound || number >= upperBound) {
+        if ((number = Integer.parseInt(guess.strip())) <= LOWERBOUND || number >= UPPERBOUND) {
             return false;
         }
         return true;
