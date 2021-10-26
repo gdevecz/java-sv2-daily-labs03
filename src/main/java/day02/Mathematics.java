@@ -4,20 +4,13 @@ public class Mathematics {
 
     public boolean isDiagonalMatrix(int matrix[][]) {
 
-        if (matrix.length != matrix[0].length) {
-            return false;
-        }
-        for (int i = 0; i <= matrix.length; i ++) {
-            for ( int j = 0; j <= matrix.length; j++) {
-                if(i != j && matrix[i][j] != 0);
-            }
-        }
-        return true;
+        return isTriangularMatrix(matrix) && isTriangularMatrix(getTransposedMatrix(matrix));
     }
 
-    public int[][] transposedMatrix(int[][] matrix) {
+    public int[][] getTransposedMatrix(int[][] matrix) {
+
         int[][] newMatrix = new int[matrix[0].length][matrix.length];
-        for (int i = 0; i < matrix.length; i ++) {
+        for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[0].length; j++) {
                 newMatrix[j][i] = matrix[i][j];
             }
@@ -25,14 +18,16 @@ public class Mathematics {
         return newMatrix;
     }
 
-    public boolean isTriangleMatrix(int matrix[][]) {
+    public boolean isTriangularMatrix(int matrix[][]) {
+
         if (matrix.length != matrix[0].length) {
             return false;
         }
-        for (int i = 1; i <= matrix.length; i ++) {
-            for ( int j = 0; j < i; j++) {
-                if(matrix[i][j] != 0);
-                return false;
+        for (int i = 1; i < matrix.length; i++) {
+            for (int j = 0; j < i; j++) {
+                if (matrix[i][j] != 0) {
+                    return false;
+                }
             }
         }
         return true;
