@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Prison {
+
     private List<Integer> cells;
 
     public void openFreeCells() {
