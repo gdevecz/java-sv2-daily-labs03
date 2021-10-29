@@ -1,6 +1,6 @@
 package Day05;
 
-public class JpurnalMain {
+public class JournalMain {
 
     public static void main(String[] args) {
 
